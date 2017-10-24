@@ -12,10 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('dev'))
 app.use(cors({origin: true}))
 
-app.use(require('./users'))
+app.use(require('./routes/users'))
 
-// ADD (MOUNT) YOUR MIDDLEWARE (ROUTES) HERE
-// ^^^ Example: app.use('/v1/kitten', require('./routes/kitten'))
 app.use(notFound)
 app.use(errorHandler)
 

@@ -1,9 +1,6 @@
-const bcrypt = require('bcrypt');
+const passwordHash = require('password-hash');
 
 module.exports = function hashString(str, callback) {
-  const saltRounds = 10;
-  var salt = bcrypt.genSaltSync(saltRounds);
-  const hashed = bcrypt.hashSync(str, salt)
+  const hashed = passwordHash.generate(str)
   callback(null, hashed)
-
 }
